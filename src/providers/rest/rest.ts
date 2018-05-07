@@ -10,31 +10,14 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class RestProvider {
 
-  apiUrl = 'http://ec2-54-213-137-161.us-west-2.compute.amazonaws.com:2403';
+  /*apiUrl = 'http://ec2-54-213-137-161.us-west-2.compute.amazonaws.com:2403';*/
 
   constructor(public http: HttpClient) {
     console.log('Hello RestProvider Provider');
   }
 
-  getBebidas() {
-    return new Promise(resolve => {
-      this.http.get(this.apiUrl+'/bebidas').subscribe(data => {
-        resolve(data);
-      }, err => {
-        console.log(err);
-      });
-    });
-  }
-  addBebida(data) {
-    return new Promise((resolve, reject) => {
-      this.http.post(this.apiUrl+'/bebidas', JSON.stringify(data))
-        .subscribe(res => {
-          resolve(res);
-        }, (err) => {
-          reject(err);
-        });
-    });
-  }
-  
+obtenerDatos(){
+  return this.http.get('http://ec2-54-213-137-161.us-west-2.compute.amazonaws.com:2403/bebidas');
+}
 
 }

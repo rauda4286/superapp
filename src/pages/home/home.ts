@@ -8,17 +8,19 @@ import { RestProvider } from '../../providers/rest/rest';
 export class HomePage {
   /*images = ['1.jpg','2.jpg','3.jpg','4.jpg'];*/
 
-  constructor(public navCtrl: NavController, public restProvider: RestProvider){
-    this.getBebidas();
+bebidas
+  constructor(public navCtrl: NavController, public restProvider: RestProvider){}
+
+  ionViewDidLoad(){
+    this.restProvider.obtenerDatos()
+    .subscribe(
+      (data) => {this.bebidas  = data;},
+      (error)=>{console.log(error);}
+    )
+  
+  
   }
 
- bebidas: any;
 
- getBebidas() {
-  this.restProvider.getBebidas()
-  .then(data => {
-    this.bebidas = data;
-    console.log(this.bebidas);
-  });
-}
+ 
 }

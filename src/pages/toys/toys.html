@@ -1,0 +1,18 @@
+<ion-header >
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Juguetes</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content>
+    <ion-list inset>
+      <ion-item *ngFor="let Juguetes of Juguetes">
+        {{Juguetes.Nombre}}-{{Juguetes.Precio}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  

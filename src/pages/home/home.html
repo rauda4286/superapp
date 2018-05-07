@@ -10,20 +10,8 @@
 
 <ion-content>
   <ion-list inset>
-    <ion-item *ngFor="let user of users">
-      <h2>{{bebidas.Nombre}}</h2>
+    <ion-item *ngFor="let bebidas of bebidas">
+      {{bebidas.Nombre}}-{{bebidas.Precio}}
     </ion-item>
   </ion-list>
-</ion-content>
-
-<ion-item>
-    Item
-  </ion-item>
-
-<ion-content>
-<ion-slides class="image-slider" loop="true" slidesPerView="2">
-    <ion-slide *ngFor="let img of images">
-      <img src="assets/img/{{img}}" class="thumb-img" imageViewer/>
-    </ion-slide>
-  </ion-slides>
 </ion-content>

@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicImageViewerModule } from 'ionic-img-viewer';
 import {LoginPage} from '../pages/login/login';
 import { RestProvider } from '../providers/rest/rest';
+import { ToysProvider } from '../providers/toys/toys';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { RestProvider } from '../providers/rest/rest';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestProvider
+    RestProvider,
+    ToysProvider
   ]
 })
 export class AppModule {}
