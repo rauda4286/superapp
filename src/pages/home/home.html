@@ -7,17 +7,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-    <div >
-        <div class="text-center ">
-            <h1 style="text-align: center;">Bienvenido a tu Super online.</h1>
-            <p text-justify   padding>En superApp nos preocupamos por ofrecerte nuestros productos 
-                de mejor calidad al mejor precio, sobre todo puedes ordenar desde la comodidad de tu hogar
-                haciendo entregas en tiempo record e integridad en nuestros productos.
-              </p>
-          </div>
-        </div>
 
+<ion-content>
+  <ion-list inset>
+    <ion-item *ngFor="let user of users">
+      <h2>{{bebidas.Nombre}}</h2>
+    </ion-item>
+  </ion-list>
 </ion-content>
 
 <ion-item>

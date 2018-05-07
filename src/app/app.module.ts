@@ -5,11 +5,12 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-
+import { HttpClientModule } from '@angular/common/http';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicImageViewerModule } from 'ionic-img-viewer';
 import {LoginPage} from '../pages/login/login';
+import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import {LoginPage} from '../pages/login/login';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicImageViewerModule,
+      HttpClientModule
   ],
+  
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -33,7 +36,8 @@ import {LoginPage} from '../pages/login/login';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestProvider
   ]
 })
 export class AppModule {}
